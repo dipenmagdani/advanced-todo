@@ -27,10 +27,8 @@ interface HighlightData {
 const Editor = () => {
   const { register, setValue } = useForm<FormData>();
   const { selectedTodo, handleUpdateTodo } = TodoContextApi();
-  const [command, setCommand] = useState<boolean>(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const [contentData, setContentData] = useState<any>("");
-  const [isHighlighted, setIsHighlighted] = useState<boolean>(false);
   const { handleFetchKeyTerms, response, isLoading } = useApi();
 
   // Load highlights from localStorage on component mount
@@ -90,9 +88,7 @@ const Editor = () => {
   };
 
   const handleCommand = (command: string, value: string = "") => {
-    setCommand(false);
     document.execCommand(command, false, value);
-    setCommand(true);
   };
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -1,6 +1,5 @@
 import { File, Pin, PinOff, PlusCircle, Trash2 } from "lucide-react";
 import { TodoContextApi } from "../../context/TodoContext";
-import { useEffect } from "react";
 
 const SideBar = () => {
   const {
@@ -10,7 +9,6 @@ const SideBar = () => {
     handleSelectedTodo,
     handleDeleteTodo,
     handlePinTodo,
-    isPinned,
   } = TodoContextApi();
 
   return (
